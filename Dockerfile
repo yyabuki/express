@@ -6,6 +6,6 @@ RUN apt-get update && apt-get -y upgrade \
     && tar xvfz express-1.5.1-linux_x86_64.tgz \
     && cd express-1.5.1-linux_x86_64 \
     && apt-get clean \
-    && rm -r /var/lib/apt/lists/*
+    && rm -r /var/lib/apt/lists/* \
+    && cp -r /express-1.5.1-linux_x86_64/* /usr/local/bin
 WORKDIR /express-1.5.1-linux_x86_64
-ENTRYPOINT ["./express"]
